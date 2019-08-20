@@ -2,14 +2,14 @@
 
 The following links have been hosted by Github Pages
 
-https://intelligentinvestor.github.io/ii-landings/xd-exported/desktop/index.html 
-https://intelligentinvestor.github.io/ii-landings/xd-exported/tablet/index.html 
-https://intelligentinvestor.github.io/ii-landings/xd-exported/mobile/index.html 
+- https://intelligentinvestor.github.io/ii-landings/xd-exported/desktop/index.html 
+- https://intelligentinvestor.github.io/ii-landings/xd-exported/tablet/index.html 
+- https://intelligentinvestor.github.io/ii-landings/xd-exported/mobile/index.html 
 
 XD Web Link - https://xd.adobe.com/spec/12b288e4-4f07-405c-73ae-91bb8b4ca88d-6483/?x_product=xd-jira%2F2.0
 
 ## Key Resources
-- The Adobe XD file - `1.2 II Landing Page.xd`
+- The Adobe XD file - `resources/1.2 II Landing Page.xd`
 - The HTML files 
     - `xd-exported/desktop/index.html`
     - `xd-exported/table/index.html`
