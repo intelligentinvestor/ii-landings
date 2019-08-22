@@ -1,5 +1,709 @@
+<!DOCTYPE html>
 <html>
-    <body>
-        <p>This is the unified page</p>
-    </body>
+<meta charset="utf-8">
+<meta name="language" content="english">
+<meta http-equiv="content-type" content="text/html">
+<title> Intelligent Investor Landing </title>
+<meta name="format-detection" content="telephone=yes" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+    @font-face {
+        font-family: CircularStd-Bold;
+        src: url(../resources/IS%20brand%20fonts/CircularStd-Bold.otf);
+        font-weight: bold;
+    }
+
+    @font-face {
+        font-family: CircularStd-Book;
+        src: url(../resources/IS%20brand%20fonts/CircularStd-Book.otf);
+        font-weight: normal;
+    }
+
+    @font-face {
+        font-family: Gotham-Bold;
+        src: url(../resources/IS%20brand%20fonts/Gotham-Bold.ttf);
+        font-weight: bold;
+    }
+
+    * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    :root {
+        --color-theme: #e7f9fd;
+        --color-accent: #ff6d00;
+        --color-body: #516272;
+        --color-header: #242342;
+        --color-hero-title: #4ab7ce;
+        --color-hero-title-high: #242342;
+
+    }
+
+    body {
+        color: var(--color-body);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    .font-header {
+        font-family: CircularStd-Bold, sans-serif;
+        color: var(--color-header);
+    }
+
+    h2,
+    .size-h2 {
+        font-size: 30px;
+        line-height: 41px;
+    }
+
+    h3,
+    .size-h3 {
+        font-size: 22px;
+        line-height: 35px;
+    }
+
+    h4,
+    .size-h4 {
+        font-size: 25px;
+        line-height: 35px;
+    }
+
+    .color-header {
+        color: var(--color-header);
+    }
+
+    p,
+    span,
+    ul,
+    li,
+    a {
+        font-family: CircularStd-Book, sans-serif;
+    }
+
+    a {
+        color: var(--color-accent);
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    img{
+        max-width:100%;
+    }
+
+
+    header {
+        padding: 12px 0px;
+    }
+
+    .header__cta>a {
+        color: var(--color-body);
+        font-size: 17px;
+        line-height: 28px;
+        text-decoration: none;
+    }
+
+    .hero-section {
+        background-image: url(../resources/Resources%20Files/Hero%20background%20desktop.png );
+        background-size: cover;
+        background-position: top center;
+        background-repeat: no-repeat;
+        margin-bottom: 36px;
+
+    }
+
+    .hero-section>.container>.row {
+        min-height: 500px;
+    }
+
+    .hero-content {
+        padding: 40px 0px 42px;
+    }
+
+    .hero-content__title {
+        color: var(--color-hero-title);
+        font-size: 60px;
+        line-height: 76px;
+        margin-bottom: 24px;
+    }
+
+    .hero-content__title .title--highlight {
+        color: var(--color-hero-title-high);
+    }
+
+    .hero-content__desc {
+        border-left: 4px solid var(--color-hero-title);
+        padding-left: 32px;
+        font-size: 22px;
+        line-height: 35px;
+        margin-bottom: 32px;
+
+    }
+
+    .title--highlight {
+        font-family: inherit;
+    }
+
+    .btn-primary {
+        border-radius: 20px;
+        min-width: 160px;
+        padding: 11px 15px;
+        font-size: 17px;
+        font-family: Gotham-Bold, sans-serif;
+        line-height: 1em;
+        text-transform: uppercase;
+        background-color: var(--color-accent);
+        border-color: var(--color-accent);
+        text-decoration:none;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:not(:disabled):not(.disabled).active,
+    .btn-primary:not(:disabled):not(.disabled):active,
+    .show>.btn-primary.dropdown-toggle,
+    .btn-primary:not(:disabled):not(.disabled):active:focus {
+        background-color: #fff;
+        outline: unset;
+        box-shadow: unset;
+        color: var(--color-accent);
+        border-color: var(--color-accent);
+    }
+
+    .section__title h2 {
+        padding-bottom: 7px;
+        border-bottom: 2px solid var(--color-accent);
+    }
+
+    .section__title {
+        margin-bottom: 48px;
+    }
+
+    [class*="--wborder"] {
+        border-top: 1px solid #EFF0F1;
+        border-bottom: 1px solid #EFF0F1;
+        padding-top: 21px;
+        padding-bottom: 21px;
+    }
+
+    .record-section {
+        margin-bottom: 64px;
+    }
+
+    .border--grey {
+        width: 100%;
+        height: 1px;
+        background: #EFF0F1;
+    }
+
+    .border--grey.border--top {
+        margin-bottom: 21px;
+    }
+
+    .border--grey.border--bottom {
+        margin-top: 21px;
+    }
+
+    .card {
+        flex: 0 0 31.5%;
+        border: unset;
+        border-radius: 0px;
+        margin-bottom: 48px;
+    }
+
+    .reason-section .card {
+        flex: 0 0 31.5%;
+    }
+
+    .icon-card {}
+
+    .card__img {
+        margin-bottom: 20px;
+    }
+
+    .card-title {
+        margin-bottom: 8px;
+        color: var(--color-header);
+    }
+
+    .card-text {
+        font-size: 17px;
+        line-height: 28px;
+    }
+
+    .testimonial-section {
+        margin-bottom: 16px;
+    }
+
+    .testimonial-card__name,
+    .testimonial-card__text {
+        font-size: 19px;
+        line-height: 31px;
+    }
+
+    .testimonial-card__name {
+        color: var(--color-header);
+        font-family: CircularStd-Bold, sans-serif;
+    }
+
+    .cards__container {
+        margin-bottom: 16px;
+    }
+
+    .join-section {
+        margin-bottom: 64px;
+    }
+
+    footer {
+        margin-top: 128px;
+        background-color: var(--color-header);
+        padding-top: 64px;
+        padding-bottom: 96px;
+        color: #fff;
+    }
+
+    footer h2 {
+        color: #fff;
+    }
+
+    footer .border--grey {
+        background-color: #fff;
+        opacity: 0.08;
+    }
+
+    footer .border--grey.border--top {
+        margin-top: 32px;
+        margin-bottom: 40px;
+    }
+
+    footer .border--grey.border--bottom {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .footer__action>div>a {
+        margin-right: 48px;
+    }
+  
+
+    .footer__action>div>a>.action__icon {
+        margin-right: 12px;
+    }
+
+    .footer__action>div>a:last-child {
+        margin-right: 0px;
+    }
+
+    .footer__download {
+        margin-bottom: 40px;
+    }
+
+    .footer__disclaimer>div>span {
+        opacity: 0.4;
+        font-size: 13px;
+        line-height: 25px;
+    }
+
+    .footer__download>div>a:first-child {
+        margin-right: 17px;
+    }
+
+    @media (max-width:960px) {
+        .hero-section {
+            background-image: url(../resources/Resources%20Files/Hero%20background%20tablet.png );
+        background-size:cover;
+
+    }
+    .hero-content{
+        padding-top:32px;
+        padding-bottom:48px;
+        max-width:570px;
+        margin:0 auto;
+    }
+    .hero-content__title{
+        font-size:40px;
+        line-height:55px;
+    }
+    .hero-content__title br{
+        display:none;
+    }
+    .hero-content__desc{
+        padding-left:0px;
+        border-left:unset;
+        margin-bottom:24px;
+    }
+        .record-section {
+            margin-bottom:50px;
+        }
+        .reason-section .card {
+            flex: 0 0 48%;
+        }
+
+        .testimonial-section .card {
+            flex: 0 0 100%;
+            max-width: 570px;
+    margin-left: auto;
+    margin-right: auto;
+        }
+
+        .reason-before-section .card {
+            flex: 0 0 100%;
+        }
+
+        .card--icon-left {
+            display: block;
+        }
+
+        .card--icon-left .card__img {
+            float: left;
+            margin-right: 32px;
+            margin-bottom: 0px;
+        }
+        footer{
+            margin-top:96px;
+            padding-bottom:40px;
+        }
+        .footer__action > div{
+            flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+        }
+        .footer__action>div>a:not(:last-child) {
+        margin-right: 0px;
+        margin-bottom:20px;
+    }
+    .footer__action>div>a p{
+        margin-bottom: 0px;
+    }
+    footer .border--grey.border--top {
+        margin-bottom: 32px;
+    }
+
+    footer .border--grey.border--bottom {
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+    .footer__disclaimer,.footer__download,.footer__action{
+        padding-left:20px;
+        padding-right:20px;
+    }
+    .footer__download{
+        margin-bottom:32px;
+    }
+    .footer__head img{
+        width:252px;
+    }
+    }
+
+    @media (max-width:767px) {
+        .hero-section {
+        background-image: url(../resources/Resources%20Files/Hero%20background%20mobile.png );
+        
+
+    }
+        .reason-section .card {
+            flex: 0 0 100%;
+        }
+
+        .card--icon-left {
+            display: flex;
+        }
+
+        .card--icon-left .card__img {
+            float: none;
+            margin-right: unset;
+            margin-bottom: 20px;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row align-items-end">
+                <div class="col-md-6 col-12 text-center text-md-left">
+
+                    <img class="header__logo" src="../resources/Resources Files/II logo.svg">
+
+                </div>
+                <div class="d-none d-md-flex col-md-6 justify-content-end">
+                    <div class="header__cta"><a class="" href="1300880160" target="_blank">Call 1300 880 160</a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero-section ">
+            <div class="container ">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-12 ">
+                        <div class="hero-content text-center text-lg-left">
+                            <h1 class="hero-content__title">Reporting <br>
+                                Season <span class="title--highlight">Special Offer</span> - Save $220</h1>
+                            <p class="hero-content__desc color-header">Join Intelligent Investor before 31 August for
+                                just $550 (RRP
+                                $770). Plus get our 4 Best Buys special report free.</p>
+                            <a href="" class="btn btn-primary hero-content__btn">Join Now</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12 text-center "><img class="d-none d-lg-block" src="../resources/Resources Files/II devices desktop.png">
+                        <img class="d-none d-md-block d-lg-none" src="../resources/Resources Files/II devices tablet.png">
+                        <img class="d-md-none" src="../resources/Resources Files/II devices mobile.png">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="record-section ">
+            <div class="container ">
+                <div class="border--grey border--top"></div>
+                <div class="row ">
+                    <div class="col-md-4">
+                        <span class="color-header d-block mx-auto text-center size-h3 mb-0">Stocks on our <h4
+                                class="text-center mb-0">Buy List: 12</h4>
+                        </span>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="d-none d-lg-block   color-header  mx-auto text-center size-h3 mb-0">Performance since 2001: <h4
+                                class="text-center mb-0">14.93% pa*</h4>
+                        </span>
+                        <span class="d-lg-none color-header d-block mx-auto text-center size-h3 mb-0">Performance since <h4
+                            class="text-center mb-0"> 2001: 14.93% pa*</h4>
+                    </span>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="color-header d-block mx-auto text-center size-h3 mb-0">Stocks on our <h4
+                                class="text-center mb-0">Sell List: 47</h4>
+                        </span>
+                    </div>
+                </div>
+                <div class="border--grey border--bottom"></div>
+            </div>
+        </section>
+        <section class="reason-section">
+            <div class="container">
+                <div class="section__title text-center text-lg-left">
+                    <h2>Six reasons to join Intelligent Investor</h2>
+                </div>
+                <div class="cards__container d-flex flex-wrap justify-content-between">
+                    <div class="card text-center text-lg-left">
+                        <div class="card__img "><img src="../resources/Resources Files/Recommendations.svg"></div>
+
+                        <h3 class="card-title ">Daily Buy, Hold, Sell Recommendations</h3>
+                        <p class="card-text ">Get daily recommendations on Australia’s biggest stocks and best
+                            opportunities, each with Buy, Hold and Sell prices.</p>
+                    </div>
+                    <div class="card text-center text-lg-left">
+                        <div class="card__img "><img src="../resources/Resources Files/Performance.svg"></div>
+                        <h3 class="card-title ">Performance <br>Track Record</h3>
+                        <p class="card-text ">Our Buy recommendations are independently audited by EY, achieving an
+                            average annual return of 14.3%** since 2001.</p>
+                    </div>
+                    <div class="card text-center text-lg-left">
+                        <div class="card__img "><img src="../resources/Resources Files/Trust.svg"></div>
+                        <h3 class="card-title ">Trust, Integrity <br>& Partnership</h3>
+                        <p class="card-text">With no commissions or kick-backs and no advertising, our sole interest is
+                            to help your portfolio perform.</p>
+                    </div>
+                    <div class="card text-center text-lg-left">
+                        <div class="card__img "><img src="../resources/Resources Files/Model Portfolios.svg"></div>
+                        <h3 class="card-title ">Model Portfolios <br>for you to follow</h3>
+                        <p class="card-text ">Model growth and income portfolios allow you to follow the investment
+                            style
+                            that suits you best, in real time.</p>
+                    </div>
+                    <div class="card text-center text-lg-left">
+                        <div class="card__img "><img src="../resources/Resources Files/Analysts.svg"></div>
+                        <h3 class="card-title ">Ask our analysts <br>anything (except a date)</h3>
+                        <p class="card-text ">Struggling to understand a stock or topic? Use our article comments
+                            facility or Analysts Q&A.</p>
+                    </div>
+                    <div class="card text-center text-lg-left">
+                        <div class="card__img "><img src="../resources/Resources Files/Value investing.svg"></div>
+                        <h3 class="card-title ">Proven value <br>investing approach</h3>
+                        <p class="card-text ">Value investing works and our track record proves it. Our research will
+                            help you navigate the ups and downs.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section class="join-section">
+            <div class="container ">
+                <div class="border--grey border--top"></div>
+                <div class="row ">
+                    <div class="col-md-12">
+                        <span class="color-header d-block mx-auto text-center size-h3 mb-0">To save $220 <a href="#"
+                                class="text-center mb-0">join Intelligent Investor now</a>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="border--grey border--bottom"></div>
+            </div>
+
+        </section>
+        <section class="testimonial-section">
+            <div class="container">
+                <div class="section__title text-center text-lg-left">
+                    <h2>What our members say</h2>
+                </div>
+                <div class="cards__container d-flex flex-wrap justify-content-between">
+                    <div class="card testimonial-card text-center text-lg-left">
+
+                        <p class=" testimonial-card__text">“Intelligent Investor provides more value to me in
+                            recommendations, advice and education than I ever thought I would find and you do it at a
+                            very reasonable price. I thank you all for your efforts and look forward to the time when my
+                            investments have grown to achieve financial comfort and even freedom.”</p>
+                        <span class="testimonial-card__name">Michael C.</span>
+                        <span class="testimonial-card__location">South Australia</span>
+                    </div>
+                    <div class="card testimonial-card text-center text-lg-left">
+                        <p class=" testimonial-card__text">“I’ve been a subscriber to Intelligent Investor for around 10
+                            years and I’ve been impressed with their performance over that time.”</p>
+                        <span class="testimonial-card__name ">Timothy M.</span>
+                        <span class="testimonial-card__location">Sydney</span>
+                    </div>
+                    <div class="card testimonial-card text-center text-lg-left">
+                        <p class=" testimonial-card__text">“I have been an investor for more than 25 years. For the
+                            first 15 years, I plodded along with mixed success but since discovering Intelligent
+                            Investor in 2002, I have been much more successful.”</p>
+                        <span class="testimonial-card__name ">Douglas K.</span>
+                        <span class="testimonial-card__location">Queensland</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+        <section class="reason-before-section">
+            <div class="container">
+                <div class="section__title text-center text-lg-left">
+                    <h2>Three reasons to act before the 31st of August</h2>
+                </div>
+                <div class="cards__container d-flex flex-wrap justify-content-between">
+                    <div class="card card--icon-left text-center text-md-left">
+                        <div class="card__img "><img src="../resources/Resources Files/Save.svg"></div>
+
+                        <h3 class="card-title">Save $220 on you membership</h3>
+                        <p class="card-text">Normally $770, a year’s membership is yours for just $550 if you act before
+                            31 August.</p>
+                    </div>
+                    <div class="card card--icon-left text-center text-md-left">
+                        <div class="card__img "><img src="../resources/Resources Files/Special Report.svg"></div>
+                        <h3 class="card-title">One Free Special Report</h3>
+                        <p class="card-text">Want to know which four stocks our analysts would buy right now? This
+                            report has all the details.</p>
+                    </div>
+                    <div class="card card--icon-left text-center text-md-left">
+                        <div class="card__img "><img src="../resources/Resources Files/Money Back.svg"></div>
+                        <h3 class="card-title">30-day Money Back Guarantee</h3>
+                        <p class="card-text">If our service is not for you, cancel it within 30 days for a full refund,
+                            no questions asked.</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+        <section class="join-section">
+            <div class="container ">
+                <div class="border--grey border--top"></div>
+                <div class="row ">
+                    <div class="col-md-12">
+                        <span class="color-header d-block mx-auto text-center size-h3 mb-0">To save $220 <a href="#"
+                                class="text-center mb-0">join Intelligent Investor now</a>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="border--grey border--bottom"></div>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row text-center footer__head">
+                <div class="col-12">
+                    <p>Proudly</p>
+                    <img src="../resources/Resources Files/IS logo ┬╖ White.svg">
+                </div>
+
+            </div>
+            <div class="border--grey border--top"></div>
+            <h2 class="d-none d-lg-block">We’re here to help</h2>
+            <div class="row footer__action">
+                <div class="col-12  d-flex flex-wrap">
+                    <a class=" d-flex">
+                        <div class="action__icon"> <img src="../resources/Resources Files/Group 37062.svg">
+                        </div>
+                        <p>Monday to Friday, 8am - 6pm AEST</p>
+                    </a>
+                    <a class=" d-flex">
+                        <div class="action__icon"> <img src="../resources/Resources Files/Group 28699.svg"></div>
+                        <p>Call us on 1300 880 160</p>
+                    </a>
+                    <a class=" d-flex">
+                        <div class="action__icon"> <img src="../resources/Resources Files/Group 1054.svg"></div>
+                        <p>Follow us on Twitter</p>
+                    </a>
+                    <a class="d-flex">
+                        <div class="action__icon"> <img src="../resources/Resources Files/Group 1053.svg"></div>
+                        <p>Connect with us on Facebook</p>
+                    </a></div>
+
+
+
+            </div>
+            <div class="border--grey border--bottom"></div>
+            <div class="row footer__download">
+                <div class="col-12 ">
+                    <a class=""><img src="https://via.placeholder.com/135x40 "></a>
+                    <a class=""><img src="https://via.placeholder.com/135x40 "></a>
+
+                </div>
+            </div>
+            <div class="row footer__disclaimer">
+                <div class="col-12"> <span>IMPORTANT: This information is general financial product advice only and you
+                        should consider the relevant product disclosure statement (PDS) or seek professional advice
+                        before making any investment decision. Product disclosure statements for financial products
+                        offered through InvestSMART can be downloaded from this website or obtained by contacting 1300
+                        880 160. You should consider the product disclosure statement before making a decision about a
+                        product. All indications of performance returns are historical and cannot be relied upon as an
+                        indicator for future performance. <br><br>* Applies only to those portfolios labelled ‘Capped fees’ and
+                        includes all InvestSMART fees. You may be charged additional fees from third parties (eg.
+                        brokerage and ETF costs). Refer to the Product Disclosure Statement and Investment Menu for more
+                        information. # InvestSMART Portfolio performance figures are after investment and admin fees
+                        excl. brokerage and assuming dividends re-invested and no withdrawals. The peer comparison
+                        figures have been sourced from Morningstar data and is therefore limited to the funds and
+                        investment products included in their database. This may not include all funds available for
+                        retail investment in Australia. The peer calculation is inclusive of admin and investment fees;
+                        excludes brokerage and no withdrawals have been made. InvestSMART cannot determine whether or
+                        not franking has been included, nor if dividends have been reinvested. Historical performance is
+                        not a reliable indicator of future performance. <br><br>^ Only funds and investment products included in
+                        the Morningstar Australia database are available for fee and performance comparison. This may
+                        not include all funds available for retail investment in Australia. Only funds with > three year
+                        returns were included in any fee comparison, and were compared to Morningstar’s nominated
+                        benchmark. Fees are calculated by Morningstar as the average over 10 years. Whilst every care
+                        has been taken in producing these numbers, InvestSMART does not guarantee the accuracy of the
+                        figures produced in the table. Fee data may not include all costs being charged such as platform
+                        and adviser fees. For the effect of fees on your cumulative returns, please see our report How
+                        Fees Can Destroy Your Wealth. <br><br>^^ 531 Buy recommendations published by Intelligent Investor
+                        between 1 June 2001 and 30 June 2018 were independently verified by EY, as per the
+                        Recommendations Report; adjusted for franking, excludes admin and brokerage costs. Copyright ©
+                        1999-2019 InvestSMART Financial Services Pty Ltd. All rights reserved | Australian Financial
+                        Services Licensee: AFSL # 226435 | ABN 70 089 038 531</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
 </html>
