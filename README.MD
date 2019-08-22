@@ -1,7 +1,7 @@
 ## TODO
 Ensure that it is previewable via
 
-- https://intelligentinvestor.github.io/ii-landings/unified/
+- https://intelligentinvestor.github.io/ii-landings/unified/ 
 
 ## Pages hosted
 
